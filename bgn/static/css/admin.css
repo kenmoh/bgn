@@ -1,0 +1,46 @@
+#header {
+  background: teal;
+  color: white;
+  height: 50px;
+}
+
+#branding h1 {
+  color: white;
+}
+
+div.breadcrumbs {
+  background: midnightblue;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: midnightblue;
+}
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button {
+  background: black;
+  color: white;
+}
+
+.button.default,
+input[type="submit"].default,
+.submit-row input.default {
+  background: midnightblue;
+  color: white;
+}
+
+.object-tools a:link,
+.object-tools a:visited {
+  background: black;
+  color: white;
+}
+
+a:link,
+a:visited {
+  color: teal;
+}

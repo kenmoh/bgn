@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+<!-- Loading Static -->
+{% load static %}
+{% block title %} | Add Education {% endblock %}
+<!-- Main Content -->
+{% block content %}
+<!-- Education-->
+<section class="container-fluid mt-5 post-bg-img">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card card-hover border-color mb-3 mt-5 form-opaque">
+            <div class="card-body">
+              <h6 class="card-title text-center text-muted">EditEducation</h6>
+              <hr />
+              <form method="POST" class="mt-4" autocomplete="off">
+                 {% csrf_token %}
+                {% if user.is_authenticated %}
+                <input type="hidden" name="user_id" value="{{ user.id }}" />
+                {% else %}
+              <input type="hidden" name="user_id" value="0" />
+              {% endif %}
+                <div class="form-row" id="addForm">
+                  <div class="form-group col-sm-12">
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="School"
+                      name="school"
+                      value="{{education.school}}"
+                    />
+                  </div>
+                  <div class="form-group col-sm-12">
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="Field of Study"
+                      name="field_of_study"
+                      value="{{education.field_of_study}}"
+                    />
+                  </div>
+                  <div class="form-group col-sm-12">
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="Qualification"
+                      name="qualification"
+                      value="{{ education.qualification }}"
+                    />
+                  </div>
+                  <div class="form-group col-sm-12">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Year"
+                      name="year"
+                      value="{{education.year}}"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-black  btn-sm mt-1 btn-block"
+                >
+                  Submit
+                </button>
+              </form>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+<!-- ====Load Static==== -->
+{% load static %}
+<!-- =====Brandind======== -->
+{% block branding %}
+<h1 id="head"><strong>BGN</strong> Admin Area</h1>
+{% endblock %}
+<!-- ==== Extra Styles ==== -->
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}" />
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+<!-- Loading Static -->
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} | Profile {% endblock %}
+<!-- Main Content -->
+{% block content %}
+<section class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="col-10">
+			<div class="row justify-content-center ">
+				<div class="col-sm-12 col-md-12 col-lg-3">
+					<img src="{% static 'img/cocktail.jpg' %}" alt="..." class="rounded-circle" style="height:125px; width:125px;">
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-5 mt-4 mb-0 pl-0">
+					<h1 class="text-center teal-text font-weight-bold">{{ user.first_name|title }} {{ user.last_name|title }}</h1>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4 mt-4 pl-0">
+					<p class="text-center m-0 teal-text"><small>Phone: {{ user.phone }} </small></p>
+					<p class="text-center m-0 teal-text"><small>Email: {{ user.email }} </small></p>
+					<p class="text-center m-0 teal-text"><small>Location: {{ user.location }} </small></p>
+				</div>
+			</div>
+			<hr class="bg-info ">
+		</div>
+	</div>
+</section>
+<section class="container">
+	<div class="row justify-content-center">
+		<div class="col-10">
+			<div class="row justify-content-center">
+				<div class="col-4 ">
+					<h5 class="text-monospace teal-text">About Me</h5>
+				</div>
+				<div class="col-8 m-0">
+					<p class="pl-3">{{ user.about_me }}</p>
+				</div>
+			</div>
+			<hr class="bg-info ">
+		</div>
+	</div>
+</section>
+<section class="container">
+	<div class="row justify-content-center">
+		<div class="col-10">
+			<div class="row justify-content-center">
+				<div class="col-4 ">
+					<h5 class="m-0 text-monospace teal-text">Work Experience</h5>
+				</div>
+				<div class="col-8">
+					{% for experience in experiences %}
+					<p class="m-0 pl-3"><strong>Company Name:</strong> {{ experience.company_name }}</p>
+					<p class="m-0 pl-3"><strong>Title:</strong> {{ experience.job_title }}</p>
+					<p class="m-0 pl-3"><strong>Description:</strong> {{ experience.job_description }}</p>
+					<p class="m-0 pl-3"><strong>From:</strong> {{ experience.year_from }}</p>
+					<p class="m-0 pl-3"><strong>To:</strong> {{ experience.year_to}}</p>
+					<br>
+					{% endfor %}
+				</div>
+			</div>
+			<hr class="bg-info ">
+		</div>
+	</div>
+</section>
+<section class="container">
+	<div class="row justify-content-center">
+		<div class="col-10">
+			<div class="row justify-content-center">
+				<div class="col-4">
+					<h5 class="text-monospace teal-text">
+						Key Skills
+					</h5>
+				</div>
+				<div class="col-8">
+					 {% for skill in user.skills_as_list %}
+            <span class="badge badge-secondary">{{ skill }}</span>
+            {% endfor %}
+				</div>
+			</div>
+			<hr class="bg-info ">
+		</div>
+	</div>
+</section>
+<section class="container">
+	<div class="row justify-content-center">
+		<div class="col-10">
+			<div class="row justify-content-center">
+				<div class="col-4">
+					<h5 class="text-monospace teal-text">Education</h5>
+				</div>
+				<div class="col-8">
+						{% for education in educations %}
+						<p class="pl-3 m-0"><strong>School: </strong>{{ education.school }}</p>
+						<p class="pl-3 m-0"><strong>Qualification:</strong> {{ education.field_of_study }}</p>
+						<p class="pl-3 m-0"><strong>Education:</strong>{{ education.qualification }}</p>
+						<p class="pl-3 m-0"><strong>Year: </strong>{{ education.year }}</p>
+					<br>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

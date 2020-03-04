@@ -1,0 +1,160 @@
+body {
+  background-color: rgba(0, 0, 0, 0.048);
+}
+
+.home-bg {
+  height: 85vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.reg-bg-img {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.log-bg-img {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.blog-bg-img {
+  height: 300vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.post-bg-img {
+  background-image: url(/img/white-cup.jpg);
+  height: 120vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-bg-img {
+  height: 120vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-height{
+height: 100vh;
+background-position: center;
+background-size: cover;
+}
+
+.form-opaque {
+  opacity: 0.9;
+  border-radius: 0px;
+}
+
+.teal-text {
+  color: teal;
+}
+
+.border-color {
+  border-color: teal;
+}
+
+.btn-black {
+  background-color: teal;
+  color: white;
+}
+
+.bg-nav {
+  background-color: teal;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  opacity: 0.8;
+}
+
+.card-img {
+  height: 20rem !important;
+  width: 100%;
+  border-radius: 0px;
+}
+.card-detail-img {
+  height: 300px !important;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.removePad {
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.container-fluid {
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+
+.img-rounded {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+.rounded-img {
+  height: 150px;
+  width: 150px;
+  margin-top: -100px;
+  margin-left: 45px;
+}
+
+.card-opaque {
+  opacity: 0.9;
+}
+
+.form-control:focus {
+  border-color: rgb(5, 110, 50);
+  box-shadow: inset 0 1px 1px rgba(8, 179, 73, 0.075),
+    0 0 8px rgba(2, 184, 114, 0.6);
+}
+
+.card-hover:hover {
+  box-shadow: 0px 0px 5px #00c7ff, 0px 0px 10px, 0px 0px 15px #00c7ff !important;
+}
+
+.mx {
+  margin-right: 300px;
+}
+
+.btn-md {
+  background-color: black;
+  color: white;
+}
+
+.bg-teal {
+  background-color: teal;
+}
+
+.margin-top {
+  margin-top: -30px;
+  margin-bottom: -30px;
+}
+
+.jumbotron-bg {
+  background-color: teal;
+  color: white;
+  opacity: 0.85;
+}
+
+.search-bg {
+  height: 600px !important;
+  width: 100% !important;
+  border: none;
+}
+
+.bg-teal {
+  background-color: teal !important;
+  color: white !important;
+  opacity: 0.8;
+}
+
+.card {
+  border-radius: 0 !important;
+}

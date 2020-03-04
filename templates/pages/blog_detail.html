@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+<!-- Loading Static -->
+{% load static %}
+{% block title %} | Blog details {% endblock %}
+<!-- Main Content -->
+{% block content %}
+<!-- Blog Detail-->
+  <section class="container-fluid pt-5 blog-bg-img">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-9 col-lg-6 removePad">
+              <div class="card border mt-5">
+                <img
+                  src="{{ blog.image.url }}"
+                  alt=""
+                  class="card-img-top card-detail-img"
+                />
+                <div class="card-body">
+                  <img
+                    src="{{ blog.user.profile_image.url }}"
+                    alt=""
+                    class=" rounded-circle img-rounded"
+                  />
+                  <span class="teal-text">{{ blog.user.username }}</span>
+                  <hr />
+
+                  <p class="card-title text-center">
+                    <strong>{{ blog.title }}</strong>
+                  </p>
+                  <p class="card-text font-weight-lighter">
+                    {{ blog.content }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+

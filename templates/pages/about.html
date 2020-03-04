@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+<!-- Loading Static -->
+{% load static %}
+{% block title %} | About{% endblock %}
+<!-- Main Content -->
+{% block content %}
+<!-- About-->
+<section class="container">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-12 removePad">
+              <br><br><br>
+              <div class="card border">
+                {% for abt in about %}
+                  <img src="{{ abt.image.url }}" alt="" class="card-img-top card-detail-img" />
+                  <p class="card-text text-left font-weight-lighter p-4">
+                    {{ abt.content }}
+                  </p>
+                {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-12 removePad mt-3">
+              <div class="card border mb-2">
+                <div class="card-header bg-teal text-center removePad text-white">
+                  BGN'S MISSION AND VISION
+                </div>
+              <div class="card border p-4">
+                <h5 class="text-left font-weight-light teal-text pt-1">
+                  <strong>Vision: </strong>
+                </h5>
+                {% for abt in about %}
+                  <p class="text-left font-weight-lighter">
+                    {{ abt.vision }}
+                  </p>
+                {% endfor %}
+                <h5 class="text-left font-weight-light teal-text">
+                  <strong>Mission:</strong>
+                </h5>
+                {% for abt in about %}
+                  <p class="text-left font-weight-lighter">
+                   {{ abt.mission }}
+                  </p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-12 removePad pt-2">
+              <div class="card border mb-5">
+                <div class="card-header bg-teal text-center removePad text-white">
+                  BGN'S OBJECTIVE
+                </div>
+                <ul>
+                  {% for objective in objectives %}
+                  <li class="text-left font-weight-lighter">
+                    {{ objective.objective }}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <h3 class="text-center font-weight-light teal-text margin-top">
+            MEET THE EXCOS
+          </h3>
+          <div class="row justify-content-center mb-5">
+            {% for executive in executives %}
+            <div class="col-sm-12 col-md-6 col-lg-4 removePad">
+              <div class="card shadow mt-5">
+                <div class="card-header bg-info">
+                  <br><br><br><br>
+                </div>
+                <div class="card-body">
+                  <img src="{{ executive.image.url }}" alt="" class=" rounded-circle rounded-img" />
+                  <p class="card-title text-center">
+                    <strong>{{ executive.first_name }} {{ executive.last_name }}</strong><br>
+                    <span>{{ executive.position }}</span>
+                  </p>
+                  <hr />
+                    <p class="card-text text-center">
+                      {{ executive.about_me }}
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+

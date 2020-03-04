@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!-- Loading Static -->
+{% load static %}
+{% block title %} | Post Blog {% endblock %}
+{% load crispy_forms_tags %}
+<!-- Main Content -->
+{% block content %}
+<!-- Post-->
+  <section class="container-fluid pt-5 post-bg-img">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4">
+          <div class="card card-hover border-color mb-3 mt-5 form-opaque">
+            <div class="card-body">
+              <h6 class="card-title text-center text-muted">Create Blog</h6>
+              <hr />
+              <form method="POST" class="mt-4" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button
+                  type="submit"
+                  class="btn btn-black  btn-sm mt-1 btn-block"
+                >
+                  Post
+                </button>
+              </form>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+
