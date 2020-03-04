@@ -24,7 +24,11 @@ SECRET_KEY = '21=r(b5876j(k(!=48l!lyzlkg1uhw%hfz&i%*82$8tibxj1cg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['bgnaija.herokuapp.com', 'localhost']
+=======
+ALLOWED_HOSTS = ['bgnaija.herokuapp.com']
+>>>>>>> 95e67b037b69d948689cf97a5df1bc3c6ebd9264
 
 # Application definition
 
