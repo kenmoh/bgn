@@ -3,28 +3,24 @@ body {
 }
 
 .home-bg {
-  background-image: url(/img/cocktail3.jpg);
   height: 85vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .reg-bg-img {
-  background-image: url(/img/cocktail.jpg);
-  height: 120vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .log-bg-img {
-  background-image: url(/img/redwine.jpg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .blog-bg-img {
-  background-image: url(/img/coffee.jpg);
   height: 300vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,11 +35,16 @@ body {
 }
 
 .contact-bg-img {
-  background-image: url(/img/wine.jpg);
   height: 120vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.img-height{
+height: 100vh;
+background-position: center;
+background-size: cover;
 }
 
 .form-opaque {
@@ -85,11 +86,6 @@ body {
 .removePad {
   padding-right: 3px;
   padding-left: 3px;
-}
-
-.removeImagePad {
-  padding-right: 0px;
-  padding-left: 0px;
 }
 
 .container-fluid {
