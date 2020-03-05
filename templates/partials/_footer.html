@@ -1,8 +1,16 @@
-<footer class="bg-dark text-white text-center mt-5" style="opacity:.7;">
-  Copyright &copy;
-  <span class="year">2020</span> Bartender Guild of Nigeria <br />
-  <a href="" class="text-white"> About Us </a> |
-  <a href="{% url 'contact' %}" class="text-white"> Contact Us </a> |
-  <a href="" class="text-white"> Terms and Conditions </a> |
-  <a href="" class="text-white"> Privacy Policy </a>
-</footer>
+<nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="{% url 'index' %}">BGN</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About Us </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>

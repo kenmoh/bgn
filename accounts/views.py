@@ -84,7 +84,7 @@ def add_education(request):
         # Get form Values
         user_id = request.POST['user_id']
         school = request.POST['school']
-        field_of_study = request.POST['field']
+        field_of_study = request.POST['field_of_study']
         qualification = request.POST['qualification']
         year = request.POST['year']
 
