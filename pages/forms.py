@@ -1,4 +1,5 @@
 from django import forms
+from crispy_forms.helper import FormHelper
 from .models import Post
 
 
@@ -16,3 +17,8 @@ class PostForm(forms.ModelForm):
                   'content',
                   'image'
                   ]
+
+    def __init__(self, *args, **kwargs):
+        super(PostForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.fields['image'].required = False
