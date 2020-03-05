@@ -13,17 +13,21 @@
           {% for blog in blogs %}
                <div class="col-sm-12 col-md-6 col-lg-4 removePad">
               <div class="card card-hover shadow mt-5">
+                  {% if blog.image %}
                 <img
                   src="{{ blog.image.url }}"
                   alt=""
                   class="card-img-top card-img"
                 />
+                  {% endif %}
                 <div class="card-body">
+                    {% if blog.user.profile_image %}
                   <img
                     src="{{ blog.user.profile_image.url }}"
                     alt=""
                     class=" rounded-circle img-rounded"
                   />
+                    {% endif %}
                   <span class="teal-text">{{ blog.user.username }}</span>
                   <hr />
                   <a href="{% url 'blog_detail' blog.id %}">

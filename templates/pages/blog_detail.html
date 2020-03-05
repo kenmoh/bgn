@@ -11,17 +11,21 @@
           <div class="row justify-content-center">
             <div class="col-sm-12 col-md-9 col-lg-6 removePad">
               <div class="card border mt-5">
+                {% if blog.image %}
                 <img
                   src="{{ blog.image.url }}"
                   alt=""
                   class="card-img-top card-detail-img"
                 />
+                {% endif %}
                 <div class="card-body">
+                  {% if blog.user.profile_image %}
                   <img
                     src="{{ blog.user.profile_image.url }}"
                     alt=""
                     class=" rounded-circle img-rounded"
                   />
+                  {% endif %}
                   <span class="teal-text">{{ blog.user.username }}</span>
                   <hr />
 
