@@ -196,7 +196,7 @@ def apply(request):
 
 def update(request):
     if request.method == 'POST':
-        form = UserUpdateForm(request.POST or None, instance=request.user)
+        form = UserUpdateForm(request.POST, request.FILES or None, instance=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, f'User Updated Successfully !')
