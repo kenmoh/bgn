@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from crispy_forms.helper import FormHelper
 from .models import User, Education, BackgroundAdmin
 from .states import STATE_CHOICES
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
@@ -76,6 +77,11 @@ class UserUpdateForm(forms.ModelForm):
                   'about_me',
                   'profile_image'
                   ]
+
+    def __init__(self, *args, **kwargs):
+        super(UserUpdateForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.fields['profile_image'].required = False
 
 
 class ApplicationForm(forms.ModelForm):
