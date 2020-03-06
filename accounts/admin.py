@@ -14,7 +14,7 @@ class UserAdmin(UserAdmin):
         ('User', {'fields': ('username', 'phone',
                              'email', 'first_name', 'last_name', 'location', 'skills', 'about_me',
                              'profile_image', 'confirm_application', 'is_approved')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')})
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups')})
     )
 
     list_filter = ['confirm_application', 'is_approved']
@@ -24,3 +24,4 @@ admin.site.register(User, UserAdmin)
 admin.site.register(BackgroundAdmin)
 admin.site.register(Application)
 admin.site.register(Success)
+
