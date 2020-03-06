@@ -11,8 +11,10 @@
             <div class="card card-hover border-color mb-3 mt-5 form-opaque">
               <div class="card-body">
                 <h6 class="card-title text-center text-muted">Contact Us</h6>
+                {% include "partials/_alert.html" %}
                 <hr />
                 <form method="POST" class="mt-4" autocomplete="off">
+                  {% csrf_token %}
                   <div class="form-row" id="addForm">
                     <div class="form-group col-sm-12">
                       <input
@@ -20,6 +22,7 @@
                         class="form-control form-control-sm"
                         placeholder="Full Name"
                         name="name"
+                        required
                       />
                     </div>
                     <div class="form-group col-sm-12">
@@ -28,6 +31,7 @@
                         class="form-control form-control-sm"
                         placeholder="Email"
                         name="email"
+                        required
                       />
                     </div>
                     <div class="form-group col-sm-12">
@@ -36,6 +40,7 @@
                         class="form-control form-control-sm"
                         placeholder="Subject"
                         name="subject"
+                        required
                       />
                     </div>
                     <div class="form-group col-sm-12">
@@ -43,7 +48,8 @@
                         type="text"
                         class="form-control form-control-sm"
                         placeholder="Place of Work"
-                        name="work"
+                        name="place_of_work"
+                        required
                       />
                     </div>
                     <div class="form-group col-sm-12">
@@ -51,6 +57,7 @@
                         class="form-control form-control-sm"
                         placeholder="Message"
                         name="message"
+                        required
                       ></textarea>
                     </div>
                   </div>

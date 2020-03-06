@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
-from .models import Post, Event, About, Objective, Executive
+from .models import Post, Event, About, Objective, Executive, Contact
 from accounts.models import User, Application
 from .forms import PostForm
 
@@ -88,10 +88,6 @@ def event(request):
     return render(request, 'pages/events.html', context)
 
 
-def contact(request):
-    return render(request, 'pages/contact.html')
-
-
 def about(request):
     about = About.objects.all()
     objectives = Objective.objects.all()
@@ -102,3 +98,20 @@ def about(request):
         'executives': executives,
     }
     return render(request, 'pages/about.html', context)
+
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        place_of_work = request.POST['place_of_work']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
+        new_contact = Contact(name=name, email=email, place_of_work=place_of_work, subject=subject, message=message)
+        new_contact.save()
+        messages.success(request, 'Thank you for contacting us, we will get back to you shortly !')
+
+        return redirect('contact')
+    else:
+        return render(request, 'pages/contact.html')

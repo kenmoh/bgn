@@ -48,8 +48,20 @@ class Executive(models.Model):
     first_name = models.CharField(max_length=75)
     last_name = models.CharField(max_length=75)
     position = models.CharField(max_length=75)
-    about_me= models.CharField(max_length=75)
+    about_me = models.CharField(max_length=75)
     image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.EmailField()
+    place_of_work = models.CharField(max_length=125)
+    subject = models.CharField(max_length=125)
+    message = models.TextField()
+
+    def __str__(self):
+        return f'{self.name}'
+

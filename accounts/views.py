@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
@@ -178,7 +179,7 @@ def delete_exp(request, id):
     messages.success(request, 'Experience successfully deleted')
     return redirect('dashboard', experience.user_id)
 
-
+@login_required
 def apply(request):
     if request.method == 'POST':
         form = ApplicationForm(request.POST or None, instance=request.user)
