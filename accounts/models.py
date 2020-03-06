@@ -23,6 +23,10 @@ class User(AbstractUser):
         # Split Skills with comma
         return self.skills.split(',')
 
+    class Meta:
+        verbose_name = 'Member'
+        verbose_name_plural = 'All Members'
+
 
 class BackgroundAdmin(models.Model):
     user = models.OneToOneField(User, on_delete=models.DO_NOTHING, null=True, blank=True)
