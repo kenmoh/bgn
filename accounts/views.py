@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
-from .models import Experience, Education, User, BackgroundAdmin
+from .models import Experience, Education, User, BackgroundAdmin, Success
 from .forms import RegistrationForm, UserUpdateForm, ApplicationForm
 from pages .models import Post
 
@@ -227,10 +227,12 @@ def dashboard(request, id):
     posts = Post.objects.all().filter(user=user).order_by('-date_posted')
     experiences = Experience.objects.all().filter(user=user)
     educations = Education.objects.all().filter(user=user)
+    successes = Success.objects.all()
     context = {
         'user': user,
         'posts': posts,
         'experiences': experiences,
-        'educations': educations
+        'educations': educations,
+        'successes': successes
     }
     return render(request, 'accounts/dashboard.html', context)
