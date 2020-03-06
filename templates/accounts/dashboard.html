@@ -2,13 +2,13 @@
 <!-- Loading Static content -->
 {% load static %}
 <!-- ------- -->
-{% block title %} | Employer Dashboard {% endblock %}
+{% block title %} | Dashboard {% endblock %}
 {% block content %}
 <!-- ==== NDASHBOARD====== -->
         <section class="container">
             <div class="pt-5">{% include "partials/_alert.html" %}</div>
             {% for success in successes %}
-                {% if success %}
+                {% if success and user.is_approved %}
                     <div class="alert alert-success mt-3" role="alert">
                         <p class="text-center m-0">{{ success.title }}! {{ success.message }}</p>
                     </div>
