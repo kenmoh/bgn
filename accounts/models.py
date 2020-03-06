@@ -71,6 +71,10 @@ class Application(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Application Message'
+        verbose_name_plural = 'Application Message'
+
 
 class Success(models.Model):
     title = models.CharField(max_length=75)
@@ -78,3 +82,7 @@ class Success(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Success Message'
+        verbose_name_plural = 'Success Message'
