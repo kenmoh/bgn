@@ -4,6 +4,16 @@
 {% block title %} | Welcome {% endblock %}
 <!-- Home Page Content -->
 {% block content %}
+{% for application in applications %}
+{% if application %}
+<section class="container-fluid bg-info pt-5 pb-2">
+    <h5 class="text-white text-center mt-2 mb-0">{{ application.title }}! {{ application.message }} <a
+            href="{% url 'apply' %}">Apply</a>
+    </h5>
+</section>
+{% else %}
+{% endif %}
+{% endfor %}
 <section class="container-fluid" style="padding:0px;">
   <div class="card bg-dark text-white" style="">
     <img

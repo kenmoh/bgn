@@ -85,27 +85,16 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ApplicationForm(forms.ModelForm):
-    first_name = forms.CharField(label='', required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control-sm', 'Placeholder': 'First Name'}))
-    last_name = forms.CharField(label='', required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control-sm', 'Placeholder': 'Last Name'}))
-    phone = forms.CharField(label='', widget=forms.NumberInput(
-        attrs={'class': 'form-control-sm', 'Placeholder': 'Phone Number'}))
-    email = forms.EmailField(label='', widget=forms.EmailInput(
-        attrs={'class': 'form-control-sm', 'Placeholder': 'Email'}))
-    location = forms.ChoiceField(label='', choices=STATE_CHOICES, widget=forms.Select(
-        attrs={'class': 'form-control-sm '}))
-    confirm = forms.BooleanField(label='Confirm')
+    confirm_application = forms.BooleanField(label='Confirm')
 
     class Meta:
         model = User
-        fields = ['first_name',
-                  'last_name',
-                  'phone',
-                  'email',
-                  'location',
-                  'confirm'
-                  ]
+        fields = ['confirm_application']
+
+    def __init__(self, *args, **kwargs):
+        super(ApplicationForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.fields['confirm_application'].required = False
 
 
 class EducationForm(forms.ModelForm):

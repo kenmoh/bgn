@@ -13,6 +13,8 @@ class User(AbstractUser):
     about_me = models.TextField()
     location = models.CharField(max_length=35, choices=STATE_CHOICES)
     profile_image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    is_approved = models.BooleanField(default=False)
+    confirm_application = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.username}'
@@ -63,14 +65,8 @@ class Experience(models.Model):
 
 
 class Application(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    first_name = models.CharField(max_length=75)
-    last_name = models.CharField(max_length=75)
-    email = models.EmailField(blank=True, null=True)
-    phone = models.CharField(max_length=35, unique=True)
-    location = models.CharField(max_length=35, choices=STATE_CHOICES)
-    approved = models.BooleanField()
-    confirm = models.BooleanField(default=False)
+    title = models.CharField(max_length=75)
+    message = models.CharField(max_length=75)
 
     def __str__(self):
-        return f'{self.user}'
+        return self.title

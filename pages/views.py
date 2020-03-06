@@ -2,14 +2,16 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from .models import Post, Event, About, Objective, Executive
-from accounts.models import User
+from accounts.models import User, Application
 from .forms import PostForm
 
 
 def index(request):
     about = About.objects.all()
+    applications = Application.objects.all()
     context = {
-        'about': about
+        'about': about,
+        'applications': applications
     }
     return render(request, 'pages/index.html', context)
 

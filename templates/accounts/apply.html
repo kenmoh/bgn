@@ -18,9 +18,10 @@
                   {% csrf_token %}
                   {{ form | crispy }}
 
-                <button type="submit" class="btn btn-block btn-sm btn-black">
+                <button type="submit" class="btn btn-sm btn-black">
                   Apply
                 </button>
+                  <a href="{% url 'dashboard' user.id %}" class="btn btn-danger btn-sm">Cancel</a>
               </form>
               <br />
             </div>

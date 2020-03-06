@@ -183,12 +183,10 @@ def apply(request):
     if request.method == 'POST':
         form = ApplicationForm(request.POST or None, instance=request.user)
         if form.is_valid():
-            post_form = form.save(commit=False)
-            post_form.user = request.user
-            post_form.save()
+            form.save()
             messages.success(
                 request, f'Application Successful !')
-            return redirect('index')
+            return redirect('dashboard', request.user.pk)
     else:
         form = ApplicationForm(instance=request.user)
     return render(request, 'accounts/apply.html', {'form': form})

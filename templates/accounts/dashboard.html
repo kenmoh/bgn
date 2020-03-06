@@ -210,8 +210,34 @@
         </tbody>
       </table>
     </section>
-<section class="container">
-        <a href="{% url 'delete' user.id %}" type="button" class="btn btn-danger mb-5">Delete My Account</a>
-    </section>
+<<section class="container">
+        <div class="row">
+            <div class="col-6"><a href="{% url 'profile' user.id %}" type="button" class="btn btn-black mb-5 float-right btn-sm"> Preview Profile</a></div>
+            <div class="col-6">
+        <button class="btn btn-danger btn-sm" type="submit" data-toggle="modal" data-target="#account">Delete My Account</button>
+        <!--Account  Modal -->
+        <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="accountLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="accountLabel">Delete My Account...</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="text-center text-danger">Are you sure you want to delete Your Account ?</h6>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{% url 'dashboard' user.id %}" type="button" class="btn btn-sm btn-black">Cancel</a>
+                    <form action="{% url 'delete' user.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm ">Delete</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
 
