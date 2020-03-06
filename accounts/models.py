@@ -70,3 +70,11 @@ class Application(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Success(models.Model):
+    title = models.CharField(max_length=75)
+    message = models.CharField(max_length=75)
+
+    def __str__(self):
+        return self.title
