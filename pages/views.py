@@ -26,10 +26,26 @@ def blog(request):
 
 def blog_detail(request, id):
     blog = get_object_or_404(Post, pk=id)
+    is_liked = False
+    if blog.likes.filter(id=request.user.id).exists():
+        is_liked = True
     context = {
-        'blog': blog
+        'blog': blog,
+        'is_liked': is_liked
     }
     return render(request, 'pages/blog_detail.html', context)
+
+
+def likes(request):
+    post = get_object_or_404(Post, id=request.POST['blog_id'])
+    is_liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        is_liked = False
+    else:
+        post.likes.add(request.user)
+        is_liked = True
+    return redirect('blog_detail', id=post.id)
 
 
 def post(request):
@@ -115,3 +131,4 @@ def contact(request):
         return redirect('contact')
     else:
         return render(request, 'pages/contact.html')
+

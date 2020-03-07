@@ -35,9 +35,11 @@
                       <strong>{{ blog.title }}</strong>
                     </p>
                     <p class="card-text text-center">
-                     {{ blog.content }}
+                     {{ blog.content|truncatechars:20  }}
                     </p>
                   </a>
+                    <hr>
+                    <img src="{% static 'img/icons/heart.svg' %}" alt="" width="32" height="32">{{ blog.total_likes }}
                 </div>
               </div>
             </div>

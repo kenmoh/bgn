@@ -12,5 +12,6 @@ urlpatterns = [
     path('delete_blog/<int:id>', views.delete_blog, name='delete_blog'),
     path('edit_blog/<int:id>', views.edit_blog, name='edit_blog'),
     path('events', views.event, name='event'),
+    path('likes', views.likes, name='likes'),
 ]
 

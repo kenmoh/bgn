@@ -5,6 +5,7 @@ from accounts.models import User
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=125)
+    likes = models.ManyToManyField(User, related_name='likes', blank=True)
     content = models.TextField()
     image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
@@ -12,6 +13,8 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.user}'
 
+    def total_likes(self):
+        return self.likes.count()
 
 class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
