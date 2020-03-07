@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .models import Post, Event, About, Objective, Executive, Contact
 from accounts.models import User, Application
@@ -35,7 +36,7 @@ def blog_detail(request, id):
     }
     return render(request, 'pages/blog_detail.html', context)
 
-
+@login_required
 def likes(request):
     post = get_object_or_404(Post, id=request.POST['blog_id'])
     is_liked = False

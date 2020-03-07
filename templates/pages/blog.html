@@ -39,7 +39,11 @@
                     </p>
                   </a>
                     <hr>
-                    <img src="{% static 'img/icons/heart.svg' %}" alt="" width="32" height="32">{{ blog.total_likes }}
+                    {% if blog.total_likes == 0 %}
+                    <img src="{% static 'img/icons/heart.svg' %}" alt="" width="32" height="32">
+                    {% else %}
+                     <img src="{% static 'img/icons/heart.svg' %}" alt="" width="32" height="32">{{ blog.total_likes }}
+                    {% endif %}
                 </div>
               </div>
             </div>
