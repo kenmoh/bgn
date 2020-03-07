@@ -61,10 +61,10 @@
             <td>{{ post.title }}</td>
             <td>{{ post.content }}</td>
             <td class="float-right">
-                    <a href="{% url 'edit_blog' post.id %}" class="btn btn-sm btn-info" type="button">
+                    <a href="{% url 'edit_blog' post.id %}" class="btn btn-sm btn-info mx-auto d-block" type="button">
                         Edit
                     </a>
-                   <button class="btn btn-danger btn-sm" type="submit" data-toggle="modal" data-target="#blog">Delete</button>
+                   <button class="btn btn-danger btn-sm mt-1" type="submit" data-toggle="modal" data-target="#blog">Delete</button>
 <!--DELETE MODAL-->
                  <div class="modal fade" id="blog" tabindex="-1" role="dialog" aria-labelledby="blogLabel"
                             aria-hidden="true">
@@ -122,10 +122,10 @@
             <td>{{ experience.year_from }}</td>
             <td>{{ experience.year_to}}</td>
             <td class="float-right">
-                    <a href="{% url 'edit_experience' experience.id %}" class="btn btn-sm btn-info" type="button">
+                    <a href="{% url 'edit_experience' experience.id %}" class="btn btn-sm btn-info mx-auto d-block" type="button">
                         Edit
                     </a>
-                   <button class="btn btn-danger btn-sm" type="submit" data-toggle="modal" data-target="#experience">Delete</button>
+                   <button class="btn btn-danger btn-sm mt-1" type="submit" data-toggle="modal" data-target="#experience">Delete</button>
 <!--DELETE MODAL-->
                  <div class="modal fade" id="experience" tabindex="-1" role="dialog" aria-labelledby="experienceLabel"
                             aria-hidden="true">
@@ -181,10 +181,10 @@
             <td>{{ education.qualification }}</td>
             <td>{{ education.year }}</td>
             <td class="float-right">
-                    <a href="{% url 'edit_education' education.id %}" class="btn btn-sm btn-info" type="button">
+                    <a href="{% url 'edit_education' education.id %}" class="btn btn-sm btn-info mx-auto d-block" type="button">
                         Edit
                     </a>
-                   <button class="btn btn-danger btn-sm" type="submit" data-toggle="modal" data-target="#education">Delete</button>
+                   <button class="btn btn-danger btn-sm mt-1" type="submit" data-toggle="modal" data-target="#education">Delete</button>
 <!--DELETE MODAL-->
                  <div class="modal fade" id="education" tabindex="-1" role="dialog" aria-labelledby="educationLabel"
                             aria-hidden="true">
@@ -222,7 +222,7 @@
         <div class="row">
             <div class="col-6"><a href="{% url 'profile' user.id %}" type="button" class="btn btn-black mb-5 float-right btn-sm"> Preview Profile</a></div>
             <div class="col-6">
-        <button class="btn btn-danger btn-sm" type="submit" data-toggle="modal" data-target="#account">Delete My Account</button>
+        <button class="btn btn-danger btn-sm mx-auto d-block" type="submit" data-toggle="modal" data-target="#account">Delete Account</button>
         <!--Account  Modal -->
         <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="accountLabel"
             aria-hidden="true">
