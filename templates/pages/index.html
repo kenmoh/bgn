@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col">
 
-     <div class="jumbotron jumbotron-bg mt-5 text-center">
+     <div class="jumbotron jumbotron-bg mt-4 pb-4 text-center">
                  {% for abt in about %}
                  <h1 class="text-center font-weight-light">
                         {{ abt.heading }}
@@ -47,5 +47,77 @@
       </div>
     </div>
   </div>
+</section>
+<section class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-3 mt-2">
+            <div class="card bg-dark text-white">
+              <img src="{% static 'img/cocktail.jpg' %}" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                  <br><br><br><br>
+                  <hr>
+                <h5 class="card-title ">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3 mt-2">
+            <div class="card bg-dark text-white">
+              <img src="{% static 'img/cocktail3.jpg' %}" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                  <br><br><br><br>
+                  <hr>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3 mt-2">
+            <div class="card bg-dark text-white">
+              <img src="{% static 'img/cocktail2.jpg' %}" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                  <br><br><br><br>
+                  <hr>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+        </div>  
+        <div class="col-sm-12 col-md-6 col-lg-3 mt-2">
+            <div class="card bg-dark text-white">
+              <img src="{% static 'img/load.jpg' %}" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                  <br><br><br><br><br>
+                  <hr>
+                  <a href="{% url 'event' %}" class="btn btn-lg btn-primary mx-auto d-flex ">Load more...</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container mt-5">
+    <h3 class="text-center text-info">Our Sponsors</h3>
+    <div class="container border border-info">
+        <div class="row">
+            <div class="col col-sm-6 col-md-4 col-lg-2 mt-2 mb-2">
+                <img src="{% static 'img/load.jpg' %}" class="rounded-circle mx-auto d-block" alt="..." style="height:125px; width:125px">
+            </div>
+              <div class="col col-sm-6 col-md-4 col-lg-2 mt-2 mb-2">
+                <img src="{% static 'img/cocktail2.jpg' %}" class="rounded-circle mx-auto d-block" alt="..." style="height:125px; width:125px">
+            </div>
+             <div class="col col-sm-6 col-md-4 col-lg-2 mt-2 mb-2">
+                <img src="{% static 'img/cocktail.jpg' %}" class="rounded-circle mx-auto d-block" alt="..." style="height:125px; width:125px">
+            </div>
+              <div class="col col-sm-6 col-md-4 col-lg-2 mt-2 mb-2">
+                <img src="{% static 'img/load.jpg' %}" class="rounded-circle mx-auto d-block" alt="..." style="height:125px; width:125px">
+            </div>
+             <div class="col col-sm-6 col-md-4 col-lg-2 mt-2 mb-2">
+                <img src="{% static 'img/load.jpg' %}" class="rounded-circle mx-auto d-block" alt="..." style="height:125px; width:125px">
+            </div>
+              <div class="col col-sm-6 col-md-4 col-lg-2 mt-2 mb-2">
+                <img src="{% static 'img/cocktail3.jpg' %}" class="rounded-circle mx-auto d-block" alt="..." style="height:125px; width:125px">
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock content %}

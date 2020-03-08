@@ -85,7 +85,7 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ApplicationForm(forms.ModelForm):
-    confirm_application = forms.BooleanField(label='Confirm')
+    confirm_application = forms.BooleanField(label='Confirm Application')
 
     class Meta:
         model = User
