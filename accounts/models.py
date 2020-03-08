@@ -29,13 +29,12 @@ class User(AbstractUser):
 
 
 class BackgroundAdmin(models.Model):
-    user = models.OneToOneField(User, on_delete=models.DO_NOTHING, null=True, blank=True)
     login_background = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     register_background = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     home_background = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
 
     def __str__(self):
-        return 'Background Image'
+        return 'Background'
 
     class Meta:
         verbose_name_plural = 'Backgrounds'

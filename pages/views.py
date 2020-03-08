@@ -3,16 +3,18 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .models import Post, Event, About, Objective, Executive, Contact
-from accounts.models import User, Application
+from accounts.models import User, Application, BackgroundAdmin
 from .forms import PostForm
 
 
 def index(request):
     about = About.objects.all()
     applications = Application.objects.all()
+    backgrounds = BackgroundAdmin.objects.all()
     context = {
         'about': about,
-        'applications': applications
+        'applications': applications,
+        'backgrounds': backgrounds
     }
     return render(request, 'pages/index.html', context)
 

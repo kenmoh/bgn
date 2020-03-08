@@ -16,12 +16,16 @@
 {% endfor %}
 <section class="container-fluid" style="padding:0px;">
   <div class="card bg-dark text-white" style="">
-    <img
-      src="{% static 'img/cocktail.jpg' %}"
+    {% for background in backgrounds %}
+      {% if background.home_background %}
+         <img
+      src="{{ background.home_background.url }}"
       class="card-img search-bg"
       alt="..."
 
     />
+      {% endif %}
+      {% endfor %}
     <div class="card-img-overlay">
       <div class="container">
         <div class="row">
