@@ -5,6 +5,8 @@ from django.shortcuts import get_object_or_404
 from .models import Post, Event, About, Objective, Executive, Contact
 from accounts.models import User, Application, BackgroundAdmin
 from .forms import PostForm
+from django.template.loader import render_to_string
+from django.http import JsonResponse
 
 
 def index(request):
@@ -38,17 +40,24 @@ def blog_detail(request, id):
     }
     return render(request, 'pages/blog_detail.html', context)
 
+
 @login_required
 def likes(request):
-    post = get_object_or_404(Post, id=request.POST['blog_id'])
+    blog = get_object_or_404(Post, id=request.POST['blog_id'])
     is_liked = False
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
+    if blog.likes.filter(id=request.user.id).exists():
+        blog.likes.remove(request.user)
         is_liked = False
     else:
-        post.likes.add(request.user)
+        blog.likes.add(request.user)
         is_liked = True
-    return redirect('blog_detail', id=post.id)
+    context = {
+        'blog': blog,
+        'is_liked': is_liked
+    }
+    if request.is_ajax():
+        html = render_to_string('partials/_likes.html', context, request=request)
+        return JsonResponse({'form': html})
 
 
 def post(request):
