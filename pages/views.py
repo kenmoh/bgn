@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .models import Post, Event, About, Objective, Executive, Contact
-from accounts.models import User, Application, BackgroundAdmin
+from accounts.models import User, Application, BackgroundAdmin, Sponsor
 from .forms import PostForm
 from django.template.loader import render_to_string
 from django.http import JsonResponse
@@ -13,10 +13,14 @@ def index(request):
     about = About.objects.all()
     applications = Application.objects.all()
     backgrounds = BackgroundAdmin.objects.all()
+    sponsors = Sponsor.objects.all()
+    events = Event.objects.all()
     context = {
         'about': about,
         'applications': applications,
-        'backgrounds': backgrounds
+        'backgrounds': backgrounds,
+        'sponsors': sponsors,
+        'events': events
     }
     return render(request, 'pages/index.html', context)
 

@@ -89,3 +89,11 @@ class Success(models.Model):
     class Meta:
         verbose_name = 'Success Message'
         verbose_name_plural = 'Success Message'
+
+
+class Sponsor(models.Model):
+    name = models.CharField(max_length=75)
+    logo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+
+    def __str__(self):
+        return self.name

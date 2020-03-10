@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import User, BackgroundAdmin, Application, Success
+from .models import User, BackgroundAdmin, Application, Success, Sponsor
 
 
 class UserAdmin(UserAdmin):
@@ -24,4 +24,5 @@ admin.site.register(User, UserAdmin)
 admin.site.register(BackgroundAdmin)
 admin.site.register(Application)
 admin.site.register(Success)
+admin.site.register(Sponsor)
 
