@@ -33,6 +33,7 @@ def blog(request):
     return render(request, 'pages/blog.html', context)
 
 
+@login_required
 def blog_detail(request, id):
     blog = get_object_or_404(Post, pk=id)
     is_liked = False

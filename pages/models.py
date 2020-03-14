@@ -16,6 +16,7 @@ class Post(models.Model):
     def total_likes(self):
         return self.likes.count()
 
+
 class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=125)

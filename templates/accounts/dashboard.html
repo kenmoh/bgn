@@ -127,7 +127,8 @@
                     </a>
                    <button class="btn btn-danger btn-sm mt-1" type="submit" data-toggle="modal" data-target="#experience">Delete</button>
 <!--DELETE MODAL-->
-                 <div class="modal fade" id="experience" tabindex="-1" role="dialog" aria-labelledby="experienceLabel"
+                 <div class="col-sm-12 col-md-8 col-lg-4">
+                     <div class="modal fade" id="experience" tabindex="-1" role="dialog" aria-labelledby="experienceLabel"
                             aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -152,6 +153,7 @@
                                 </div>
                             </div>
                         </div>
+                 </div>
             </td>
           </tr>
         {% endfor %}
@@ -186,7 +188,8 @@
                     </a>
                    <button class="btn btn-danger btn-sm mt-1" type="submit" data-toggle="modal" data-target="#education">Delete</button>
 <!--DELETE MODAL-->
-                 <div class="modal fade" id="education" tabindex="-1" role="dialog" aria-labelledby="educationLabel"
+               <div class="col-sm-12 col-md-8 col-lg-4">
+                     <div class="modal fade" id="education" tabindex="-1" role="dialog" aria-labelledby="educationLabel"
                             aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -210,7 +213,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                 </div>
+               </div>
             </td>
           </tr>
         {% endfor %}
@@ -224,7 +228,8 @@
             <div class="col-6">
         <button class="btn btn-danger btn-sm mx-auto d-block" type="submit" data-toggle="modal" data-target="#account">Delete Account</button>
         <!--Account  Modal -->
-        <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="accountLabel"
+   <div class="col-sm-12 col-md-8 col-lg-4">
+            <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="accountLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -239,13 +244,14 @@
                     </div>
                     <div class="modal-footer">
                         <a href="{% url 'dashboard' user.id %}" type="button" class="btn btn-sm btn-black">Cancel</a>
-                    <form action="{% url 'delete' user.id %}" method="POST">
+                        <form action="{% url 'delete' user.id %}" method="POST">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger btn-sm ">Delete</button>
-                    </form>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+   </div>
+</section>
 {% endblock %}
-
