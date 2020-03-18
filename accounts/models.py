@@ -81,7 +81,8 @@ class Application(models.Model):
 
 class Success(models.Model):
     title = models.CharField(max_length=75)
-    message = models.CharField(max_length=75)
+    message = models.TextField()
+    date_sent = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.title

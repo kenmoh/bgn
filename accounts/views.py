@@ -228,7 +228,7 @@ def dashboard(request, id):
     posts = Post.objects.all().filter(user=user).order_by('-date_posted')
     experiences = Experience.objects.all().filter(user=user)
     educations = Education.objects.all().filter(user=user)
-    successes = Success.objects.all()
+    successes = Success.objects.all().order_by('-id')
     context = {
         'user': user,
         'posts': posts,
@@ -237,3 +237,10 @@ def dashboard(request, id):
         'successes': successes
     }
     return render(request, 'accounts/dashboard.html', context)
+
+
+def delete_msg(request, id):
+    success = Success.objects.all().get(pk=id)
+    success.delete()
+    messages.success(request, f'Message successfully deleted')
+    return redirect('dashboard', request.user.pk)

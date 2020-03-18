@@ -19,7 +19,26 @@
       <p class="text-center grey-text">
         <i class="fas fa-user"></i> Welcome {{ user.username|title }}
       </p>
-      <div class="row">
+            {% if successes %}
+                <p >
+              <a class="btn btn-dark" data-toggle="collapse" href="#inbox" role="button" aria-expanded="false" aria-controls="inbox">
+                Inbox <span class="badge badge-light">{{ successes | length }}</span>
+              </a>
+            </p>
+             {% else %}
+            {% endif %}
+            {% for success in successes %}
+            {% if request.user %}
+            <div class="collapse mb-3" id="inbox">
+          <div class="card card-body border border-info text-info">
+              <h6>{{ success.title }}</h6>
+            <small>{{ success.message }}</small>
+              <div class="float-right"><small class="float-right text-muted">{{ success.date_sent }}</small></div>
+          </div>
+        </div>
+            {% endif %}
+            {% endfor %}
+            <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3 mb-2">
           <a href="{% url 'update' %}" type="button" class="btn btn-black btn-block"
             >UPDATE PROFILE</a
