@@ -20,9 +20,14 @@ class UserAdmin(UserAdmin):
     list_filter = ['confirm_application', 'is_approved']
 
 
+class SuccessAdmin(UserAdmin):
+    model = User
+    list_display = ['title', 'message', 'date_sent']
+
+
 admin.site.register(User, UserAdmin)
 admin.site.register(BackgroundAdmin)
 admin.site.register(Application)
-admin.site.register(Success)
+admin.site.register(Success, SuccessAdmin)
 admin.site.register(Sponsor)
 
