@@ -7,14 +7,6 @@
 <!-- ==== NDASHBOARD====== -->
         <section class="container">
             <div class="pt-5">{% include "partials/_alert.html" %}</div>
-            {% for success in successes %}
-                {% if success and user.is_approved %}
-                    <div class="alert alert-success mt-3" role="alert">
-                        <p class="text-center m-0">{{ success.title }}! {{ success.message }}</p>
-                    </div>
-                {% else %}
-                {% endif %}
-            {% endfor %}
       <h3 class="text-center mt-5 teal-text">DASHBOARD</h3>
       <p class="text-center grey-text">
         <i class="fas fa-user"></i> Welcome {{ user.username|title }}
